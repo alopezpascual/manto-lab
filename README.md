@@ -24,7 +24,9 @@ pnpm start
 
 ## Publicación
 
-El workflow `.github/workflows/deploy-pages.yml` genera la exportación estática y la publica en GitHub Pages después de cada cambio en `main`. Para este repositorio, la URL esperada es `https://alopezpascual.github.io/manto-lab/`. GitHub Pages debe estar habilitado en Settings → Pages con fuente `GitHub Actions`; los repositorios privados necesitan un plan de GitHub que incluya Pages para repositorios privados.
+La publicación principal está en Cloudflare Pages: `https://manto-lab.pages.dev/`. Se genera como exportación estática con `NEXT_PUBLIC_SITE_URL=https://manto-lab.pages.dev` y sin ruta base.
+
+El workflow `.github/workflows/deploy-pages.yml` mantiene además una copia en GitHub Pages después de cada cambio en `main`, disponible en `https://alopezpascual.github.io/manto-lab/`.
 
 ## Arquitectura
 
