@@ -1445,6 +1445,9 @@ summary:focus-visible {
   .product-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+  .catalog-toolbar {
+    grid-template-columns: 1fr 1fr;
+  }
   .product-card:last-child {
     display: none;
   }
