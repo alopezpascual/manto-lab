@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
-import { ProductCard } from '@/components/ProductCard';
+import { ProductCatalog } from '@/components/ProductCatalog';
 import { products } from '@/lib/products';
 import { metadata as makeMetadata } from '@/lib/seo';
 export const metadataInfo = makeMetadata(
@@ -14,18 +14,14 @@ export default function ModelsPage() {
     <div className="container page-shell">
       <Breadcrumbs items={[{ name: 'Modelos', path: '/modelos/' }]} />
       <div className="page-intro">
-        <p className="eyebrow">CATÁLOGO</p>
+        <p className="eyebrow">CATÁLOGO / {products.length} MODELOS</p>
         <h1>Equipos bajo la lupa.</h1>
         <p>
           Fichas de producto con datos trazables. Estamos ampliando la investigación; las
           características desconocidas se muestran como tales.
         </p>
       </div>
-      <div className="product-grid">
-        {products.map((p) => (
-          <ProductCard key={p.id} product={p} />
-        ))}
-      </div>
+      <ProductCatalog />
     </div>
   );
 }

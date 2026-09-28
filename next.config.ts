@@ -13,6 +13,7 @@ const nextConfig: NextConfig = {
       new URL('https://neakasa.com/cdn/shop/files/**'),
       new URL('https://oneisall.com/cdn/shop/files/**'),
       new URL('https://us.air-robo.com/cdn/shop/files/**'),
+      new URL('https://m.media-amazon.com/images/**'),
     ],
   },
 };

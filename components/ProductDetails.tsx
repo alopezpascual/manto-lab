@@ -9,8 +9,10 @@ export function EditorialStatus({ product }: { product: Product }) {
       <div>
         <strong>Ficha en investigación</strong>
         <p>
-          Datos declarados por el fabricante. Aún no probado por nosotros. Revisión:{' '}
-          {product.lastReviewed}.
+          {product.editorialStatus.manufacturerData
+            ? 'Datos declarados por el fabricante.'
+            : 'Datos de la ficha comercial consultada.'}{' '}
+          Aún no probado por nosotros. Revisión: {product.lastReviewed}.
         </p>
       </div>
     </div>
@@ -221,6 +223,7 @@ export function RelatedProducts({ product }: { product: Product }) {
     <div className="related-list">
       {products
         .filter((p) => p.id !== product.id)
+        .slice(0, 4)
         .map((p) => (
           <Link key={p.id} href={`/modelos/${p.slug}/`}>
             {p.name}

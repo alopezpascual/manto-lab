@@ -21,7 +21,7 @@ export function ProductImage({
       />
       {!compact && (
         <figcaption>
-          Imagen del fabricante:{' '}
+          Imagen:{' '}
           <a href={product.image.sourceUrl} target="_blank" rel="noopener noreferrer">
             {product.image.sourceLabel}
           </a>

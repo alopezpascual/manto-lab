@@ -33,7 +33,7 @@ export async function generateMetadata({
   return p
     ? metadata(
         `${p.name}: ficha y especificaciones`,
-        `${p.shortDescription} Datos de fabricante, fuentes y pruebas pendientes.`,
+        `${p.shortDescription} Fuentes trazables y pruebas pendientes.`,
         `/modelos/${slug}/`,
         true,
         p.image,
@@ -168,9 +168,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
           <RelatedProducts product={p} />
           <div className="context-links">
             <Link href={`/marcas/${p.brand.toLowerCase()}/`}>Más de {p.brand} ↗</Link>
-            <Link href="/comparativas/neakasa-p2-pro-vs-oneisall-lm2/">
-              Comparativa Neakasa vs oneisall ↗
-            </Link>
+            <Link href="/comparar/">Comparar con otros modelos ↗</Link>
             <Link href="/mejores/doble-manto/">Qué mirar en doble manto ↗</Link>
             <Link href="/guias/que-es-un-grooming-vacuum/">Cómo funciona un kit ↗</Link>
           </div>

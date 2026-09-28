@@ -117,13 +117,16 @@ export default function Home() {
             </Link>
           </div>
           <div className="product-grid">
-            {products.map((p) => (
-              <ProductCard key={p.id} product={p} />
-            ))}
+            {products
+              .filter((product) => product.offers.some((offer) => offer.affiliateUrl))
+              .slice(0, 6)
+              .map((p) => (
+                <ProductCard key={p.id} product={p} />
+              ))}
           </div>
           <p className="method-note">
-            Las fichas combinan datos de fabricante y campos pendientes. No hemos realizado pruebas
-            propias todavía.
+            Las fichas distinguen datos de fabricante, fichas comerciales y campos pendientes. No
+            hemos realizado pruebas propias todavía.
           </p>
         </div>
       </section>

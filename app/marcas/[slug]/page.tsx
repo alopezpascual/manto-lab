@@ -36,7 +36,9 @@ export default async function BrandPage({ params }: { params: Promise<{ slug: st
         ]}
       />
       <div className="page-intro">
-        <p className="eyebrow">MARCA / {list.length} MODELO</p>
+        <p className="eyebrow">
+          MARCA / {list.length} {list.length === 1 ? 'MODELO' : 'MODELOS'}
+        </p>
         <h1>{list[0].brand}.</h1>
         <p>
           Modelos documentados en Manto Lab. Las fichas contienen fuentes y señalan lo que falta

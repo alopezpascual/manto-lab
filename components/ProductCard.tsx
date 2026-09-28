@@ -16,7 +16,10 @@ export function ProductCard({ product }: { product: Product }) {
       </div>
       <div className="card-content">
         <p className="eyebrow">
-          {product.brand} <span className="dot">·</span> Ficha en investigación
+          {product.brand} <span className="dot">·</span>{' '}
+          {product.offers.some((offer) => offer.affiliateUrl)
+            ? 'Enlace a Amazon'
+            : 'Ficha en investigación'}
         </p>
         <h3>
           <Link href={`/modelos/${product.slug}/`}>{product.name}</Link>

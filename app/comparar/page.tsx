@@ -6,7 +6,6 @@ export const metadata: Metadata = makeMetadata(
   'Comparador de kits de grooming',
   'Selecciona dos o tres equipos y compara datos de máquina, accesorios, ruido y mantenimiento.',
   '/comparar/',
-  false,
 );
 export default function ComparePage() {
   return (

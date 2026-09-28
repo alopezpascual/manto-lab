@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { products, getMerchantOffer, getProduct, manufacturerNoise } from '../lib/products.ts';
 test('catálogo: IDs y slugs únicos, fuentes trazables y sin resultados propios ficticios', () => {
+  assert.ok(products.length >= 10);
   assert.equal(new Set(products.map((p) => p.id)).size, products.length);
   assert.equal(new Set(products.map((p) => p.slug)).size, products.length);
   for (const p of products) {
@@ -31,6 +32,10 @@ test('ofertas: enlaces afiliados solo para ASIN verificados y sin precio dinámi
     'https://www.amazon.es/dp/B0BJ2P1LZV?tag=dalfgroup-21',
   );
   assert.equal(getMerchantOffer('airrobo-pg100', 'Amazon España').affiliateUrl, null);
+  for (const p of products.filter((product) => product.id !== 'airrobo-pg100')) {
+    const url = getMerchantOffer(p.id, 'Amazon España').affiliateUrl;
+    assert.match(url, /^https:\/\/www\.amazon\.es\/dp\/[A-Z0-9]{10}\?tag=dalfgroup-21$/);
+  }
   assert.equal(getMerchantOffer('missing', 'Amazon España'), null);
 });
 test('la cifra de ruido declarada conserva su contexto', () => {

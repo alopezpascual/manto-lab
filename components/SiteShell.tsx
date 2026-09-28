@@ -29,8 +29,7 @@ export function Footer() {
           </span>
           <p>Menos ruido comercial. Más criterio para cuidar su pelo.</p>
           <p className="muted">
-            Proyecto editorial en desarrollo. Datos de fabricante identificados; pruebas propias
-            pendientes.
+            Proyecto editorial en desarrollo. Fuentes identificadas; pruebas propias pendientes.
           </p>
         </div>
         <div>

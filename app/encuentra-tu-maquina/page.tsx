@@ -6,7 +6,6 @@ export const metadata: Metadata = makeMetadata(
   'Encuentra tu máquina',
   'Responde siete preguntas y descubre qué características confirmadas conviene investigar para tu perro.',
   '/encuentra-tu-maquina/',
-  false,
 );
 export default function FinderPage() {
   return (
