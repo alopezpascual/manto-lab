@@ -2,6 +2,9 @@ import type { MetadataRoute } from 'next';
 import { canonical } from '@/lib/site';
 import { products } from '@/lib/products';
 import { bestForPages, guides } from '@/lib/editorial';
+
+export const dynamic = 'force-static';
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const paths = [
     '/',

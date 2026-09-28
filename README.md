@@ -20,7 +20,11 @@ pnpm build
 pnpm start
 ```
 
-`NEXT_PUBLIC_SITE_URL` define la URL canónica pública. Copia `.env.example` a `.env.local` al desplegar y reemplaza `https://example.com`. En desarrollo se usa `http://localhost:3000` si falta.
+`NEXT_PUBLIC_SITE_URL` define la URL canónica pública y `NEXT_PUBLIC_BASE_PATH` la ruta base cuando se usa una GitHub Pages de proyecto. Copia `.env.example` a `.env.local` al desplegar y reemplaza esos valores. En desarrollo se usa `http://localhost:3000` si faltan.
+
+## Publicación
+
+El workflow `.github/workflows/deploy-pages.yml` genera la exportación estática y la publica en GitHub Pages después de cada cambio en `main`. Para este repositorio, la URL esperada es `https://alopezpascual.github.io/manto-lab/`. GitHub Pages debe estar habilitado en Settings → Pages con fuente `GitHub Actions`; los repositorios privados necesitan un plan de GitHub que incluya Pages para repositorios privados.
 
 ## Arquitectura
 
