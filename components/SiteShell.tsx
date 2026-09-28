@@ -58,8 +58,8 @@ export function Footer() {
 export function Disclosure() {
   return (
     <p className="disclosure">
-      Algunos enlaces comerciales podrían generar una comisión en el futuro.{' '}
-      <Link href="/aviso-afiliados/">Cómo funciona la afiliación</Link>.
+      En calidad de Afiliado de Amazon, obtengo ingresos por las compras adscritas que cumplen los
+      requisitos aplicables. <Link href="/aviso-afiliados/">Cómo funciona la afiliación</Link>.
     </p>
   );
 }

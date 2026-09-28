@@ -3,7 +3,7 @@ import { Breadcrumbs } from '@/components/Breadcrumbs';
 import { metadata as makeMetadata } from '@/lib/seo';
 export const metadata: Metadata = makeMetadata(
   'Aviso de afiliación',
-  'Información sobre la futura monetización de Manto Lab mediante enlaces de afiliado.',
+  'Información sobre la monetización de Manto Lab mediante enlaces de afiliado de Amazon España.',
   '/aviso-afiliados/',
 );
 export default function AffiliatePage() {
@@ -14,17 +14,22 @@ export default function AffiliatePage() {
         <p className="eyebrow">TRANSPARENCIA</p>
         <h1>Cómo se financia este proyecto.</h1>
         <p>
-          Manto Lab se plantea monetizar mediante enlaces de afiliado, inicialmente de Amazon
-          España. En este momento no hay enlaces de afiliado activos en el sitio.
+          Manto Lab utiliza enlaces de afiliado de Amazon España en algunas fichas de producto.
+          Cuando compras después de seguir uno de esos enlaces, el proyecto puede recibir una
+          comisión sin que el precio cambie para ti.
         </p>
       </div>
       <div className="article-body">
         <section>
-          <h2>Si añadimos enlaces comerciales</h2>
+          <h2>Identificación como afiliado</h2>
           <p>
-            Una compra realizada tras seguir uno de esos enlaces podría generar una comisión para el
-            proyecto. La existencia de una comisión no cambiará los criterios de comparación ni
-            convertirá datos desconocidos en recomendaciones.
+            En calidad de Afiliado de Amazon, obtengo ingresos por las compras adscritas que cumplen
+            los requisitos aplicables.
+          </p>
+          <p>
+            Los enlaces remunerados aparecen identificados como «Enlace de afiliado». La existencia
+            de una comisión no cambia los criterios de comparación ni convierte datos desconocidos
+            en recomendaciones.
           </p>
         </section>
         <section>
@@ -35,9 +40,9 @@ export default function AffiliatePage() {
           </p>
         </section>
         <div className="warning-note">
-          <strong>Pendiente de revisión jurídica.</strong> Este texto explica nuestra política
-          editorial prevista y no acredita por sí solo el cumplimiento de obligaciones legales o de
-          programas de afiliación.
+          <strong>Transparencia editorial.</strong> No mostramos precios ni disponibilidad sin una
+          fuente y una fecha verificables, y distinguimos los datos del fabricante de nuestras
+          pruebas propias.
         </div>
       </div>
     </div>

@@ -20,7 +20,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
   return paths.map((path) => ({
     url: canonical(path),
+    lastModified: new Date('2026-09-28'),
     changeFrequency: 'monthly',
-    priority: path === '/' ? 1 : 0.6,
+    priority:
+      path === '/'
+        ? 1
+        : path === '/grooming-vacuum/'
+          ? 0.9
+          : path.startsWith('/modelos/')
+            ? 0.8
+            : 0.6,
   }));
 }

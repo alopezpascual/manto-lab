@@ -7,20 +7,30 @@ test('catálogo: IDs y slugs únicos, fuentes trazables y sin resultados propios
   for (const p of products) {
     assert.ok(p.sources.length > 0);
     assert.ok(p.sources.every((s) => s.url.startsWith('https://') && s.accessed));
+    assert.ok(p.image.src.startsWith('https://'));
+    assert.ok(p.image.alt.includes(p.brand));
     assert.equal(p.editorialStatus.handsOnTested, false);
     assert.equal(p.noise.measuredDb, null);
     assert.equal(p.lab.hairPickupTest, null);
     assert.equal(getProduct(p.slug), p);
   }
 });
-test('ofertas: sin precio ni URL afiliada hasta recibir datos verificados', () => {
+test('ofertas: enlaces afiliados solo para ASIN verificados y sin precio dinámico', () => {
   for (const p of products) {
     const offer = getMerchantOffer(p.id, 'Amazon España');
     assert.ok(offer);
-    assert.equal(offer.affiliateUrl, null);
     assert.equal(offer.price, null);
     assert.equal(offer.availability, null);
   }
+  assert.equal(
+    getMerchantOffer('neakasa-p2-pro', 'Amazon España').affiliateUrl,
+    'https://www.amazon.es/dp/B0BDF62D4V?tag=dalfgroup-21',
+  );
+  assert.equal(
+    getMerchantOffer('oneisall-lm2', 'Amazon España').affiliateUrl,
+    'https://www.amazon.es/dp/B0BJ2P1LZV?tag=dalfgroup-21',
+  );
+  assert.equal(getMerchantOffer('airrobo-pg100', 'Amazon España').affiliateUrl, null);
   assert.equal(getMerchantOffer('missing', 'Amazon España'), null);
 });
 test('la cifra de ruido declarada conserva su contexto', () => {

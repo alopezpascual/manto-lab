@@ -4,7 +4,18 @@ export type Source = {
   url: string;
   accessed: string;
   evidence:
-    'fabricante' | 'investigación editorial' | 'usuarios' | 'medición propia' | 'prueba práctica';
+    | 'fabricante'
+    | 'marketplace'
+    | 'investigación editorial'
+    | 'usuarios'
+    | 'medición propia'
+    | 'prueba práctica';
+};
+export type ProductImage = {
+  src: string;
+  alt: string;
+  sourceLabel: string;
+  sourceUrl: string;
 };
 export type Offer = {
   merchant: string;
@@ -19,6 +30,7 @@ export type Product = {
   brand: string;
   name: string;
   model: string;
+  image: ProductImage;
   status: 'investigación' | 'probado';
   shortDescription: string;
   dimensions: { width: number | null; depth: number | null; height: number | null };
@@ -154,6 +166,12 @@ export const products: Product[] = [
     brand: 'Neakasa',
     name: 'Neakasa P2 Pro',
     model: 'P2 Pro',
+    image: {
+      src: 'https://neakasa.com/cdn/shop/files/P2Pro-Rake.webp?v=1781513897&width=1200',
+      alt: 'Kit de grooming con aspiración Neakasa P2 Pro y sus accesorios',
+      sourceLabel: 'Neakasa',
+      sourceUrl: 'https://neakasa.com/products/neakasa-p2-pro-dog-grooming-kit-vacuum',
+    },
     status: 'investigación',
     shortDescription:
       'Kit de grooming con aspiración y cinco herramientas anunciadas por el fabricante.',
@@ -184,6 +202,21 @@ export const products: Product[] = [
         accessed,
         evidence: 'fabricante',
       },
+      {
+        label: 'Oferta verificada en Amazon España: Neakasa P2 Pro',
+        url: 'https://www.amazon.es/dp/B0BDF62D4V',
+        accessed,
+        evidence: 'marketplace',
+      },
+    ],
+    offers: [
+      {
+        merchant: 'Amazon España',
+        affiliateUrl: 'https://www.amazon.es/dp/B0BDF62D4V?tag=dalfgroup-21',
+        price: null,
+        priceLastChecked: null,
+        availability: null,
+      },
     ],
   },
   {
@@ -193,6 +226,12 @@ export const products: Product[] = [
     brand: 'oneisall',
     name: 'oneisall LM2',
     model: 'LM2',
+    image: {
+      src: 'https://oneisall.com/cdn/shop/files/oneisall-lm2-7-in-1-pet-grooming-vacuum-kit-7835980.png?v=1765861339&width=1200',
+      alt: 'Kit de grooming con aspiración oneisall LM2 y sus siete accesorios',
+      sourceLabel: 'oneisall',
+      sourceUrl: 'https://oneisall.com/products/lm2-dog-grooming-vacuum',
+    },
     status: 'investigación',
     shortDescription: 'Kit de grooming con cortapelos y depósito de 1,5 l según la ficha oficial.',
     bin: { capacityLiters: 1.5 },
@@ -224,6 +263,21 @@ export const products: Product[] = [
         accessed,
         evidence: 'fabricante',
       },
+      {
+        label: 'Oferta verificada en Amazon España: oneisall LM2',
+        url: 'https://www.amazon.es/dp/B0BJ2P1LZV',
+        accessed,
+        evidence: 'marketplace',
+      },
+    ],
+    offers: [
+      {
+        merchant: 'Amazon España',
+        affiliateUrl: 'https://www.amazon.es/dp/B0BJ2P1LZV?tag=dalfgroup-21',
+        price: null,
+        priceLastChecked: null,
+        availability: null,
+      },
     ],
   },
   {
@@ -233,6 +287,12 @@ export const products: Product[] = [
     brand: 'AIRROBO',
     name: 'AIRROBO PG100',
     model: 'PG100',
+    image: {
+      src: 'https://us.air-robo.com/cdn/shop/files/1_e8f353a7-4289-4d52-81ad-3272a09da3a0_1200x1200.jpg?v=1737081918',
+      alt: 'Kit de grooming con aspiración AIRROBO PG100 y sus accesorios',
+      sourceLabel: 'AIRROBO',
+      sourceUrl: 'https://us.air-robo.com/products/airrobo-pg100',
+    },
     status: 'investigación',
     shortDescription:
       'Kit con cortapelos, tres niveles de aspiración y depósito de 2 l declarados por el fabricante.',

@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
-import { ProductIllustration } from '@/components/Illustration';
+import { ProductImage } from '@/components/ProductImage';
 import {
   EditorialStatus,
   NoiseIndicator,
@@ -35,6 +35,8 @@ export async function generateMetadata({
         `${p.name}: ficha y especificaciones`,
         `${p.shortDescription} Datos de fabricante, fuentes y pruebas pendientes.`,
         `/modelos/${slug}/`,
+        true,
+        p.image,
       )
     : {};
 }
@@ -77,7 +79,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
           </div>
         </div>
         <div className="product-hero-art">
-          <ProductIllustration />
+          <ProductImage product={p} preload />
         </div>
       </div>
       <div className="stat-strip">
@@ -190,6 +192,9 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
           brand: { '@type': 'Brand', name: p.brand },
           model: p.model,
           description: p.shortDescription,
+          image: p.image.src,
+          sku: p.model,
+          dateModified: p.lastReviewed,
           url: canonical(`/modelos/${p.slug}/`),
         }}
       />

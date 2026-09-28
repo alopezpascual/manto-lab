@@ -267,6 +267,14 @@ summary:focus-visible {
   flex-direction: column;
   padding: 24px;
 }
+.hero-product-image {
+  position: absolute;
+  inset: 62px 24px 48px;
+}
+.hero-product-image img {
+  object-fit: contain;
+  mix-blend-mode: multiply;
+}
 .visual-caption,
 .visual-footer {
   display: flex;
@@ -568,6 +576,48 @@ summary:focus-visible {
   height: 245px;
   overflow: hidden;
 }
+.card-image-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.product-photo {
+  position: relative;
+  width: 100%;
+  min-height: 560px;
+  margin: 0;
+  overflow: hidden;
+  background: #fff;
+}
+.product-photo.compact {
+  height: 100%;
+  min-height: 0;
+}
+.product-photo img {
+  object-fit: contain;
+  padding: 34px;
+  transition: transform 0.28s ease;
+}
+.product-photo.compact img {
+  padding: 22px;
+}
+.product-card:hover .product-photo.compact img {
+  transform: scale(1.035);
+}
+.product-photo figcaption {
+  position: absolute;
+  right: 14px;
+  bottom: 12px;
+  z-index: 1;
+  padding: 7px 9px;
+  background: rgb(255 255 255 / 88%);
+  color: #65716a;
+  font-size: 10px;
+}
+.product-photo figcaption a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
 .card-content {
   padding: 24px;
 }
@@ -730,7 +780,7 @@ summary:focus-visible {
   max-width: 560px;
 }
 .product-hero-art {
-  background: #e5e9df;
+  background: #fff;
   min-height: 560px;
   display: flex;
 }
@@ -941,6 +991,19 @@ summary:focus-visible {
 .merchant-box .disclosure {
   grid-column: 1/-1;
   margin: 5px 0 0;
+}
+.merchant-action {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+.merchant-action > span {
+  color: #65716a;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 .source-list {
   padding-left: 20px;
@@ -1492,6 +1555,12 @@ summary:focus-visible {
     min-height: 360px;
     order: -1;
   }
+  .product-photo {
+    min-height: 360px;
+  }
+  .product-photo img {
+    padding: 22px;
+  }
   .product-hero .machine-art {
     height: 360px;
   }
@@ -1522,6 +1591,9 @@ summary:focus-visible {
   }
   .merchant-box {
     grid-template-columns: 1fr;
+  }
+  .merchant-action {
+    align-items: flex-start;
   }
   .merchant-box .disclosure {
     grid-column: auto;

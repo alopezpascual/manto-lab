@@ -1,12 +1,18 @@
 import Link from 'next/link';
 import type { Product } from '@/lib/products';
 import { value, manufacturerNoise } from '@/lib/products';
-import { ProductIllustration } from './Illustration';
+import { ProductImage } from './ProductImage';
 export function ProductCard({ product }: { product: Product }) {
   return (
     <article className="product-card">
       <div className="card-art">
-        <ProductIllustration small />
+        <Link
+          className="card-image-link"
+          href={`/modelos/${product.slug}/`}
+          aria-label={`Ver ${product.name}`}
+        >
+          <ProductImage product={product} compact />
+        </Link>
       </div>
       <div className="card-content">
         <p className="eyebrow">

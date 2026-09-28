@@ -16,4 +16,10 @@ export const websiteJson = {
   '@type': 'WebSite',
   name: SITE_NAME,
   url: canonical('/'),
+  inLanguage: 'es-ES',
+  publisher: {
+    '@type': 'Organization',
+    name: SITE_NAME,
+    url: canonical('/'),
+  },
 };

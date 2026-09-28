@@ -176,10 +176,21 @@ export function MerchantOffer({ product }: { product: Product }) {
       <div>
         <p className="eyebrow">DÓNDE COMPRAR</p>
         <h3>{offer?.merchant ?? 'Amazon España'}</h3>
-        <p>Enlace y disponibilidad pendientes. No mostramos precios sin verificación.</p>
+        <p>
+          {offer?.affiliateUrl
+            ? 'Oferta del modelo exacto verificada. Consulta en Amazon el precio y la disponibilidad actuales.'
+            : 'No hemos localizado una oferta española exacta. No mostramos precios ni enlaces de variantes distintas.'}
+        </p>
       </div>
       {offer?.affiliateUrl ? (
-        <AffiliateCTA href={offer.affiliateUrl} productId={product.id} merchant={offer.merchant} />
+        <div className="merchant-action">
+          <span>Enlace de afiliado</span>
+          <AffiliateCTA
+            href={offer.affiliateUrl}
+            productId={product.id}
+            merchant={offer.merchant}
+          />
+        </div>
       ) : (
         <span className="button disabled" aria-disabled="true">
           Enlace pendiente

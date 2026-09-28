@@ -1,5 +1,5 @@
+import Image from 'next/image';
 import Link from 'next/link';
-import { ProductIllustration } from '@/components/Illustration';
 import { Flow } from '@/components/Flow';
 import { ProductCard } from '@/components/ProductCard';
 import { Disclosure } from '@/components/SiteShell';
@@ -43,11 +43,19 @@ export default function Home() {
           <div className="hero-visual">
             <div className="visual-caption">
               <span>FIG. 01</span>
-              <span>SISTEMA DE ASPIRACIÓN / ESQUEMA</span>
+              <span>NEAKASA P2 PRO / IMAGEN OFICIAL</span>
             </div>
-            <ProductIllustration />
+            <div className="hero-product-image">
+              <Image
+                src={products[0].image.src}
+                alt={products[0].image.alt}
+                fill
+                sizes="(max-width: 700px) 100vw, 46vw"
+                preload
+              />
+            </div>
             <div className="visual-footer">
-              <span>Una máquina. Varias preguntas importantes.</span>
+              <span>Imagen del fabricante · análisis editorial independiente.</span>
               <span>↓</span>
             </div>
           </div>
